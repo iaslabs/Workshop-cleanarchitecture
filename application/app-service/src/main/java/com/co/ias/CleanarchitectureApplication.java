@@ -1,4 +1,4 @@
-package com.co.ias.cleanarchitecture;
+package com.co.ias;
 
 
 import org.springframework.boot.SpringApplication;
