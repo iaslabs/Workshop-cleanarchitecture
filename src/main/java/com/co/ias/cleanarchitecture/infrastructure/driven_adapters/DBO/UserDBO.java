@@ -1,11 +1,10 @@
-package com.co.ias.cleanarchitecture.model;
+package com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -13,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "users")
 @RequiredArgsConstructor
 @Getter
-public class User{
+public class UserDBO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
