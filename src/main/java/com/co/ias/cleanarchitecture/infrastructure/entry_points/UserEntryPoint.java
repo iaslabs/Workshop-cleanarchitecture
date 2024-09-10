@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 public class UserEntryPoint {
@@ -26,8 +28,7 @@ public class UserEntryPoint {
 
     @PostMapping
     public ResponseEntity<String> createUser(@RequestBody UserDTO userDTO){
-        User user = new User(userDTO.getId(), userDTO.getName(), userDTO.getEmail());
-        String message = userUseCase.createUser(user);
+        String message = userUseCase.createUser(userDTO.toDomain());
         return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 
@@ -35,8 +36,8 @@ public class UserEntryPoint {
     public ResponseEntity<List<UserDTO>> getusers(){
         List<UserDTO> users = userUseCase.getUsers()
                                          .stream()
-                                         .map(user -> new UserDTO(user.getId(), user.getName(),
-                                                                          user.getEmail())).toList();
+                                         .map(UserDTO::fromDomain)
+                                         .toList();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 }

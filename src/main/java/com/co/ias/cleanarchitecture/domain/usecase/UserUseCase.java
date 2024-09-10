@@ -4,9 +4,6 @@ import java.util.List;
 
 import com.co.ias.cleanarchitecture.domain.model.User;
 import com.co.ias.cleanarchitecture.domain.model.gateway.UserGateway;
-import com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO.UserDBO;
-import com.co.ias.cleanarchitecture.infrastructure.driven_adapters.IUserRepositoryAdapter;
-import lombok.RequiredArgsConstructor;
 
 public class UserUseCase {
 
@@ -18,8 +15,7 @@ public class UserUseCase {
 
     public String createUser(User user){
 
-        String userCreatedMessage = userGateway.createUser(user);
-        return userCreatedMessage;
+        return userGateway.createUser(user);
     }
 
     public List<User> getUsers() {

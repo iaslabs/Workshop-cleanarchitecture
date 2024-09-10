@@ -1,16 +1,20 @@
 package com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO;
 
+import com.co.ias.cleanarchitecture.domain.model.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name = "users")
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class UserDBO {
     @Id
@@ -18,4 +22,12 @@ public class UserDBO {
     private Integer id;
     private String name;
     private String email;
+
+    public static UserDBO fromDomain(User user){
+        return new UserDBO(user.getId(), user.getName(), user.getEmail());
+    }
+
+    public User toDomain(){
+        return new User(id, name, email);
+    }
 }
