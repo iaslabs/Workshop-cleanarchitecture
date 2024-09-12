@@ -1,4 +1,4 @@
-package com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO;
+package com.co.ias.cleanarchitecture.infrastructure.driven_adapters.h2Jpa.DBO;
 
 import com.co.ias.cleanarchitecture.domain.model.User;
 import jakarta.persistence.Entity;
@@ -9,7 +9,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name = "users")

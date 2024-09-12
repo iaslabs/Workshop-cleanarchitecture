@@ -1,10 +1,7 @@
 package com.co.ias.cleanarchitecture.infrastructure.entry_points;
 
 import java.util.List;
-import java.util.stream.Stream;
 
-import com.co.ias.cleanarchitecture.domain.model.User;
-import com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO.UserDBO;
 import com.co.ias.cleanarchitecture.domain.usecase.UserUseCase;
 import com.co.ias.cleanarchitecture.infrastructure.entry_points.DTO.UserDTO;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin
 @RequestMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 public class UserEntryPoint {

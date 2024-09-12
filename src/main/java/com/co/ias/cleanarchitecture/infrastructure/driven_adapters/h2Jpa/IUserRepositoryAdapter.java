@@ -1,11 +1,10 @@
-package com.co.ias.cleanarchitecture.infrastructure.driven_adapters;
+package com.co.ias.cleanarchitecture.infrastructure.driven_adapters.h2Jpa;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.co.ias.cleanarchitecture.domain.model.User;
 import com.co.ias.cleanarchitecture.domain.model.gateway.UserGateway;
-import com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO.UserDBO;
+import com.co.ias.cleanarchitecture.infrastructure.driven_adapters.h2Jpa.DBO.UserDBO;
 import org.springframework.stereotype.Repository;
 
 @Repository

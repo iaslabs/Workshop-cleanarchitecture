@@ -1,12 +1,10 @@
 package com.co.ias.cleanarchitecture.infrastructure.entry_points.DTO;
 
 import com.co.ias.cleanarchitecture.domain.model.User;
-import com.co.ias.cleanarchitecture.infrastructure.driven_adapters.DBO.UserDBO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @AllArgsConstructor
 @Data
 public class UserDTO {
