@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group = 'com.co.ias'
-version = '0.0.1-SNAPSHOT'
+group = 'com.example'
+version = 'unspecified'
 
 repositories {
     mavenCentral()
