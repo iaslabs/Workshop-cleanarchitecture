@@ -2,10 +2,11 @@ rootProject.name = 'cleanarchitecture'
 include ':app-service'
 include ':model'
 include ':usecase'
-include ':h2db'
 include ':api-rest'
+include ':h2db'
 
-project(':app-service').projectDir = file('./application/app-service')
+
+project(':app-service') .projectDir = file('./application/app-service')
 project(':model').projectDir = file('./domain/model')
 project(':usecase').projectDir = file('./domain/usecase')
 project(':h2db').projectDir = file('./infrastructure/driven-adapters/h2db')
